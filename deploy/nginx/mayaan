@@ -1,0 +1,69 @@
+# ============================================================
+#  Nginx config for mayaan.code2vibe.dev
+#  Place at: /etc/nginx/sites-available/mayaan
+#  Then: sudo ln -s /etc/nginx/sites-available/mayaan \
+#                   /etc/nginx/sites-enabled/mayaan
+# ============================================================
+
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name mayaan.code2vibe.dev;
+
+    # ── Document root (where git pulls to) ──────────────────
+    root /var/www/mayaan;
+    index index.html;
+
+    # ── Security headers ─────────────────────────────────────
+    add_header X-Frame-Options        "SAMEORIGIN"            always;
+    add_header X-Content-Type-Options "nosniff"               always;
+    add_header X-XSS-Protection       "1; mode=block"         always;
+    add_header Referrer-Policy        "strict-origin"         always;
+    add_header Permissions-Policy     "geolocation=(), microphone=()" always;
+
+    # ── Cloudflare real IP passthrough ───────────────────────
+    # (Cloudflare tunnel connects locally, so real_ip isn't
+    #  strictly needed, but good practice if you ever expose
+    #  the port directly)
+    set_real_ip_from 127.0.0.1;
+    real_ip_header   CF-Connecting-IP;
+
+    # ── Gzip compression ─────────────────────────────────────
+    gzip            on;
+    gzip_vary       on;
+    gzip_proxied    any;
+    gzip_comp_level 6;
+    gzip_types
+        text/plain text/css text/javascript
+        application/javascript application/json
+        image/svg+xml font/woff2;
+
+    # ── Static site routing ──────────────────────────────────
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # ── Cache: assets (images, fonts, js, css) ───────────────
+    location ~* \.(jpg|jpeg|png|webp|gif|svg|ico|woff2|woff|ttf)$ {
+        expires    30d;
+        add_header Cache-Control "public, immutable";
+        access_log off;
+    }
+
+    location ~* \.(css|js)$ {
+        expires    7d;
+        add_header Cache-Control "public, must-revalidate";
+        access_log off;
+    }
+
+    # ── Block hidden files (.git, .env, etc.) ────────────────
+    location ~ /\. {
+        deny all;
+        return 404;
+    }
+
+    # ── Logs ─────────────────────────────────────────────────
+    access_log /var/log/nginx/mayaan.access.log;
+    error_log  /var/log/nginx/mayaan.error.log warn;
+}

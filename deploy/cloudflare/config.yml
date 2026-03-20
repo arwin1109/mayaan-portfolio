@@ -1,0 +1,26 @@
+# ============================================================
+#  Cloudflare Tunnel config — mayaan.code2vibe.dev
+#
+#  File location on your VM:
+#    ~/.cloudflared/config.yml
+#  OR the system-wide path:
+#    /etc/cloudflared/config.yml
+#
+#  This adds a new ingress rule for mayaan alongside your
+#  existing tunnel entries. If you already have a config.yml,
+#  just ADD the new ingress block — don't replace the whole file.
+# ============================================================
+
+tunnel: <YOUR_TUNNEL_ID>          # e.g. a1b2c3d4-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+credentials-file: /root/.cloudflared/<YOUR_TUNNEL_ID>.json
+
+ingress:
+  # ── Mayaan Portfolio ──────────────────────────────────────
+  - hostname: mayaan.code2vibe.dev
+    service: http://localhost:80
+    originRequest:
+      noTLSVerify: false
+      connectTimeout: 10s
+
+  # ── Add your other existing entries above this catch-all ──
+  - service: http_status:404
