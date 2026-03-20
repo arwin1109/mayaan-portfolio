@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mayaan Bavivaddi — 7-year-old explorer, builder, artist and future astronaut!" />
+  <meta property="og:title" content="Mayaan Bavivaddi · Little Explorer" />
+  <meta property="og:description" content="Portfolio of Mayaan — dino-lover, space dreamer & junior electrician." />
+  <meta property="og:type" content="website" />
+  <title>Mayaan Bavivaddi — Little Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Nunito:wght@400;600;700;800&family=Fredoka+One&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Starfield Canvas -->
+  <canvas id="starfield"></canvas>
+
+  <!-- Background Glow Blobs -->
+  <div class="glow-blob blob-pink"></div>
+  <div class="glow-blob blob-blue"></div>
+  <div class="glow-blob blob-green"></div>
+
+  <!-- Floating Planets -->
+  <div class="planet planet-purple"></div>
+  <div class="planet planet-orange"></div>
+  <div class="planet planet-green"></div>
+
+  <!-- ======== NAV ======== -->
+  <nav id="navbar">
+    <div class="nav-logo">MAYAAN ✦</div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#hobbies" class="nav-link">Hobbies</a></li>
+      <li><a href="#achievements" class="nav-link">Achievements</a></li>
+      <li><a href="#talents" class="nav-link">Superpowers</a></li>
+      <li><a href="#gallery" class="nav-link">Gallery</a></li>
+      <li><a href="#favorites" class="nav-link">Favorites</a></li>
+      <li><a href="#dreams" class="nav-link">Dreams</a></li>
+    </ul>
+  </nav>
+
+  <!-- ======== HERO ======== -->
+  <section id="hero">
+    <div class="hero-text">
+      <div class="hero-badge animate-fade-up delay-1">✦ Little Explorer of the Universe ✦</div>
+      <h1 class="hero-name animate-fade-up delay-2">Mayaan<br />Bavivaddi</h1>
+      <p class="hero-subtitle animate-fade-up delay-3">🚀 Dino-Lover · Space Dreamer · Junior Electrician</p>
+      <p class="hero-desc animate-fade-up delay-4">
+        Born on <strong class="text-pink">26 September 2019</strong>, Mayaan is a 7-year-old with a heart full of curiosity,
+        a mind full of stories, and hands that build wonders from LEGO blocks and magnet tiles.
+        His universe is made of dinosaurs, spaceships, and bright ideas!
+      </p>
+      <div class="hero-tags animate-fade-up delay-5">
+        <span class="tag tag-pink">🎨 Creative Artist</span>
+        <span class="tag tag-blue">⚡ Curious Explorer</span>
+        <span class="tag tag-green">🎵 Music &amp; Dance</span>
+        <span class="tag tag-pink">🦕 Dino Expert</span>
+        <span class="tag tag-blue">🧱 Master Builder</span>
+      </div>
+    </div>
+    <div class="hero-photo-wrap animate-fade-up delay-2">
+      <div class="hero-photo-ring">
+        <div class="hero-photo-inner">
+          <!-- Replace src with Mayaan's actual photo path e.g. assets/images/mayaan.jpg -->
+          <img src="assets/images/mayaan.jpg" alt="Mayaan Bavivaddi"
+               onerror="this.style.display='none';document.getElementById('photo-fallback').style.display='flex';" />
+          <div class="photo-placeholder" id="photo-fallback">
+            🧒
+            <span>Mayaan's Photo<br />Coming Soon!</span>
+          </div>
+        </div>
+      </div>
+      <div class="orbit-badge orbit-badge-1">🦕 Dino Fan</div>
+      <div class="orbit-badge orbit-badge-2">🧱 LEGO Builder</div>
+      <div class="orbit-badge orbit-badge-3">🚀 Age 7</div>
+    </div>
+    <div class="scroll-indicator animate-fade-up delay-6">
+      <span class="scroll-text">Scroll to Explore</span>
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    </div>
+  </section>
+
+  <!-- ======== ABOUT ======== -->
+  <section id="about" class="section-container">
+    <div class="reveal">
+      <p class="section-label">// Who is he?</p>
+      <h2 class="section-title">About <span class="text-pink">Mayaan</span></h2>
+      <div class="section-divider"></div>
+      <div class="about-grid">
+        <div class="info-card">
+          <div class="card-icon">🎂</div>
+          <div class="card-label">Birthday</div>
+          <div class="card-value">26 September 2019</div>
+          <div class="card-sub">A little Libra! ⚖️</div>
+        </div>
+        <div class="info-card">
+          <div class="card-icon">🌍</div>
+          <div class="card-label">Age</div>
+          <div class="card-value">7 Years Old</div>
+          <div class="card-sub">7 years of awesome!</div>
+        </div>
+        <div class="info-card school-card">
+          <div class="card-icon">🏫</div>
+          <div class="school-info">
+            <div class="card-label">School</div>
+            <div class="card-value">Anthea Montessori, House of Children</div>
+            <div class="card-sub">Where curiosity meets learning 🌱</div>
+          </div>
+          <a class="school-map-btn" href="https://share.google/HVmrHOGym4HlOmc6K" target="_blank" rel="noopener">
+            📍 View on Map
+          </a>
+        </div>
+      </div>
+      <div class="traits-row">
+        <div class="trait-pill trait-pink">⚡ Energetic &amp; Playful</div>
+        <div class="trait-pill trait-blue">🎨 Creative &amp; Artistic</div>
+        <div class="trait-pill trait-green">🔭 Curious &amp; Inquisitive</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== HOBBIES ======== -->
+  <section id="hobbies" class="section-container">
+    <div class="reveal">
+      <p class="section-label">// What he loves</p>
+      <h2 class="section-title">My <span class="text-blue">Hobbies</span></h2>
+      <div class="section-divider"></div>
+      <div class="hobbies-grid">
+        <div class="hobby-card">
+          <span class="hobby-icon">🎨</span>
+          <div class="hobby-name">Drawing &amp; Painting</div>
+          <div class="hobby-desc">Bringing dinos, rockets, and wild worlds to life with colors and brushes.</div>
+        </div>
+        <div class="hobby-card">
+          <span class="hobby-icon">📖</span>
+          <div class="hobby-name">Reading &amp; Storytelling</div>
+          <div class="hobby-desc">Epic tales of electronics-focused pretend play — his stories have no limits!</div>
+        </div>
+        <div class="hobby-card">
+          <span class="hobby-icon">🎵</span>
+          <div class="hobby-name">Music &amp; Dance</div>
+          <div class="hobby-desc">Moving to the beat and making every room a dance floor.</div>
+        </div>
+        <div class="hobby-card">
+          <span class="hobby-icon">🧱</span>
+          <div class="hobby-name">LEGO &amp; Magnet Tiles</div>
+          <div class="hobby-desc">Building incredible structures — cities, spaceships, and machines from imagination.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== ACHIEVEMENTS ======== -->
+  <section id="achievements" class="section-container">
+    <div class="reveal">
+      <p class="section-label">// His wins</p>
+      <h2 class="section-title">My <span class="text-green">Achievements</span> 🏅</h2>
+      <div class="section-divider"></div>
+      <div class="achievements-list">
+        <div class="achievement-card">
+          <div class="medal-icon">🏅</div>
+          <div class="achievement-info">
+            <div class="achievement-title">3K Run Participation Medal</div>
+            <div class="achievement-desc">
+              Mayaan laced up his shoes and ran his heart out in a full 3K run — earning a well-deserved
+              participation medal and proving that big journeys start with one step at a time!
+            </div>
+          </div>
+          <!-- Replace src with actual photo e.g. assets/images/run-3k.jpg -->
+          <div class="achievement-photo-wrap">
+            <img src="assets/images/run-3k.jpg" alt="3K Run Medal"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="achievement-photo-placeholder">📸</div>
+          </div>
+        </div>
+        <div class="achievement-card">
+          <div class="medal-icon">🥇</div>
+          <div class="achievement-info">
+            <div class="achievement-title">5K Run with Best Friend Aarvi 🤝</div>
+            <div class="achievement-desc">
+              Together with his best friend Aarvi, Mayaan conquered a 5K run — completing five whole kilometres!
+              A medal earned in true team spirit. Friends who run together, win together!
+            </div>
+          </div>
+          <div class="achievement-photo-wrap">
+            <img src="assets/images/run-5k.jpg" alt="5K Run with Aarvi"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="achievement-photo-placeholder">📸</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== TALENTS ======== -->
+  <section id="talents" class="section-container">
+    <div class="reveal">
+      <p class="section-label">// What makes him special</p>
+      <h2 class="section-title">My <span class="text-pink">Superpowers</span> ✨</h2>
+      <div class="section-divider"></div>
+      <div class="talent-showcase">
+        <div class="talent-card talent-pink">
+          <div class="talent-icon">🧱</div>
+          <div class="talent-name text-pink">Master Builder</div>
+          <div class="talent-desc">LEGO bricks and magnet tiles bow to Mayaan's architectural genius. Spaceships, bridges, castles — nothing is too big to build!</div>
+        </div>
+        <div class="talent-card talent-blue">
+          <div class="talent-icon">🖌️</div>
+          <div class="talent-name text-blue">Paint Artist</div>
+          <div class="talent-desc">With a brush in hand, Mayaan creates colorful worlds. From dinos to dreamscapes, every painting tells a story.</div>
+        </div>
+        <div class="talent-card talent-green">
+          <div class="talent-icon">⚡</div>
+          <div class="talent-name text-green">Story Engineer</div>
+          <div class="talent-desc">Pretend play meets electronics in Mayaan's imaginative tales — entire worlds where gadgets and gizmos come alive!</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== GALLERY ======== -->
+  <section id="gallery" class="section-container">
+    <div class="reveal">
+      <p class="section-label">// His creations</p>
+      <h2 class="section-title">My <span class="text-blue">Artwork</span> &amp; Gallery</h2>
+      <div class="section-divider"></div>
+      <div class="gallery-grid">
+        <!-- Replace src values with actual image paths from assets/images/ -->
+        <div class="gallery-item large">
+          <img src="assets/images/gallery-1.jpg" alt="Mayaan's Artwork"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder">🎨<span>Artwork Coming Soon</span></div>
+          <div class="gallery-overlay"><div class="gallery-caption">🖼️ My Favorite Painting</div></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery-2.jpg" alt="LEGO Build"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder">🧱<span>LEGO Build</span></div>
+          <div class="gallery-overlay"><div class="gallery-caption">🚀 Space Station Build</div></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery-3.jpg" alt="Dino Drawing"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder">🦕<span>Dino Drawing</span></div>
+          <div class="gallery-overlay"><div class="gallery-caption">🦕 T-Rex in Space</div></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery-4.jpg" alt="3K Run"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder">🏅<span>3K Run</span></div>
+          <div class="gallery-overlay"><div class="gallery-caption">🏅 3K Run Achievement</div></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery-5.jpg" alt="5K Run with Aarvi"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder">🤝<span>5K with Aarvi</span></div>
+          <div class="gallery-overlay"><div class="gallery-caption">🥇 5K Run with Aarvi</div></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery-6.jpg" alt="Dance Performance"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder">🎵<span>Dance &amp; Music</span></div>
+          <div class="gallery-overlay"><div class="gallery-caption">🎵 Dance Performance</div></div>
+        </div>
+      </div>
+      <p class="gallery-note">📸 Drop your images into <code>assets/images/</code> and update the filenames above!</p>
+    </div>
+  </section>
+
+  <!-- ======== FAVORITES ======== -->
+  <section id="favorites" class="section-container">
+    <div class="reveal">
+      <p class="section-label">// Things he adores</p>
+      <h2 class="section-title">My <span class="text-pink">Favorite</span> Things</h2>
+      <div class="section-divider"></div>
+      <div class="favorites-grid">
+        <div class="fav-card"><div class="fav-icon">🍜</div><div class="fav-label">Favorite Food</div><div class="fav-value">Noodles by Babai 🤤</div></div>
+        <div class="fav-card"><div class="fav-icon">🦕</div><div class="fav-label">Favorite Theme</div><div class="fav-value">Dinosaurs!</div></div>
+        <div class="fav-card"><div class="fav-icon">🚀</div><div class="fav-label">Fascination</div><div class="fav-value">Space &amp; Planets</div></div>
+        <div class="fav-card"><div class="fav-icon">🚗</div><div class="fav-label">Also Loves</div><div class="fav-value">Cars &amp; Vehicles</div></div>
+        <div class="fav-card">
+          <div class="fav-icon color-dots">
+            <span class="dot dot-pink"></span>
+            <span class="dot dot-blue"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <div class="fav-label">Favorite Colors</div>
+          <div class="fav-value">Pink · Blue · Green</div>
+        </div>
+        <div class="fav-card"><div class="fav-icon">⚡</div><div class="fav-label">Obsession</div><div class="fav-value">Electronics &amp; Gadgets</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== DREAMS ======== -->
+  <section id="dreams" class="section-container">
+    <div class="reveal">
+      <p class="section-label">// His big future</p>
+      <h2 class="section-title">My <span class="text-green">Dreams</span> &amp; Goals 🌟</h2>
+      <div class="section-divider"></div>
+      <div class="dreams-section">
+        <div class="dream-card dream-pink">
+          <div class="dream-icon">⚡</div>
+          <div class="dream-title">Dream Goal #1</div>
+          <div class="dream-name">Junior Electrician</div>
+          <div class="dream-desc">Mayaan wants to understand how everything works — wires, circuits, and machines. The world runs on electricity, and he wants to be the one who makes it happen!</div>
+        </div>
+        <div class="dream-card dream-blue">
+          <div class="dream-icon">🚀</div>
+          <div class="dream-title">Dream Goal #2</div>
+          <div class="dream-name">Astronaut</div>
+          <div class="dream-desc">Among the stars, past the planets, beyond the galaxy — Mayaan's eyes are set on space. One day he'll rocket through the cosmos and explore the universe!</div>
+        </div>
+      </div>
+      <div class="dream-quote">
+        <p>"I want to fix things AND fly to space — why not both?!" 🚀⚡</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer>
+    <div class="footer-name">MAYAAN BAVIVADDI ✦</div>
+    <p>Born 26 September 2019 · Anthea Montessori, House of Children · Explorer of Universes</p>
+    <p class="footer-love">Made with 💖 for the most curious kid in the cosmos</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
