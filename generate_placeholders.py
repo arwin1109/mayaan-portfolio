@@ -29,7 +29,7 @@ def make_png(width, height, r, g, b, text=""):
     )
 
 images = {
-    'mayaan.jpg':    (400, 400, 13,  27, 62),
+    'mayaan.png':    (400, 400, 13,  27, 62),
     'run-3k.jpg':    (400, 300, 10,  40, 30),
     'run-5k.jpg':    (400, 300, 40,  10, 30),
     'gallery-1.jpg': (800, 600, 20,  10, 50),

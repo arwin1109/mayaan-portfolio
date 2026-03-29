@@ -105,7 +105,7 @@ a { text-decoration: none; }
   font-weight: 900; font-size: 1.05rem;
   letter-spacing: 2px;
   background: linear-gradient(90deg, var(--pink), var(--blue));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
 }
 .nav-links { display: flex; gap: 28px; list-style: none; }
 .nav-links .nav-link {
@@ -210,7 +210,7 @@ a { text-decoration: none; }
   font-size: clamp(2.4rem, 6vw, 5rem);
   font-weight: 900; line-height: 1.05;
   background: linear-gradient(135deg, var(--star-white) 0%, var(--pink) 40%, var(--blue) 80%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
   margin-bottom: 10px;
 }
 .hero-subtitle {
@@ -235,20 +235,28 @@ a { text-decoration: none; }
 /* Hero Photo */
 .hero-photo-wrap { flex: 0 0 320px; position: relative; }
 .hero-photo-ring {
-  width: 290px; height: 290px; border-radius: 50%;
+  width: 240px; height: 240px; border-radius: 50%;
   background: linear-gradient(135deg, var(--pink), var(--blue), var(--green));
   padding: 4px; margin: 0 auto;
-  animation: spinRing 8s linear infinite;
+  /* Subtle pulse animation for the photo ring */
+  animation: photoPulse 4s ease-in-out infinite;
+}
+@keyframes photoPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(79,195,247,0.2); }
+  50% { transform: scale(1.03); box-shadow: 0 0 35px rgba(255,110,180,0.3); }
 }
 @keyframes spinRing { from { filter: hue-rotate(0deg); } to { filter: hue-rotate(360deg); } }
 .hero-photo-inner {
   width: 100%; height: 100%; border-radius: 50%;
-  background: var(--space-mid); overflow: hidden;
+  background: var(--space-mid); 
   display: flex; align-items: center; justify-content: center;
   position: relative;
+  overflow: hidden; /* Clips the image into a circle */
 }
 .hero-photo-inner img {
-  width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top; 
+  border-radius: 50%;
 }
 .photo-placeholder {
   position: absolute; inset: 0;
@@ -571,7 +579,7 @@ footer {
 .footer-name {
   font-family: 'Orbitron', monospace; font-size: .95rem;
   background: linear-gradient(90deg, var(--pink), var(--blue));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
   margin-bottom: 7px;
 }
 .footer-love { margin-top: 7px; }
@@ -591,7 +599,7 @@ footer {
   }
   .hero-tags { justify-content: center; }
   .hero-photo-wrap { flex: none; }
-  .hero-photo-ring { width: 240px; height: 240px; }
+  .hero-photo-ring { width: 200px; height: 200px; }
   .orbit-badge-3 { display: none; }
 
   #navbar { padding: 0 20px; }
